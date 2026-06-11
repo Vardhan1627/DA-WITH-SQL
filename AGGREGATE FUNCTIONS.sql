@@ -1,0 +1,33 @@
+CREATE DATABASE  AGG_FUN;
+USE AGG_FUN;
+
+CREATE TABLE Emp (
+    EmpID INT,
+    EmpName VARCHAR(30),
+    Gender VARCHAR(10),
+    Department VARCHAR(20),
+    Salary INT,
+    Age INT
+);
+
+INSERT INTO Emp VALUES
+(101,'Vardhan','Male','IT',50000,22),
+(102,'Sharu','Female','HR',45000,24),
+(103,'Akbar','Male','IT',60000,25),
+(104,'Ramya','Female','Finance',55000,23),
+(105,'Keerthi','Female','IT',65000,26),
+(106,'Cherry','Male','HR',48000,24),
+(107,'Kavya','Female','Finance',70000,27),
+(108,'Raju','Male','IT',52000,22),
+(109,'Anu','Female','HR',47000,25),
+(110,'Sai','Male','Finance',62000,28);
+
+SELECT * FROM EMP;
+
+SELECT GENDER,COUNT(*) FROM EMP GROUP BY GENDER;
+SELECT DEPARTMENT,COUNT(*)FROM EMP GROUP BY DEPARTMENT;
+SELECT GENDER,DEPARTMENT, COUNT(*)FROM EMP GROUP BY GENDER,DEPARTMENT;
+SELECT SUM(SALARY) FROM EMP;
+SELECT MIN(SALARY) FROM EMP;
+SELECT AVG(SALARY) FROM EMP;
+
